@@ -66,15 +66,7 @@ void loop() {
     Serial.println(incomingBuffer);
 
     int hexNum = (int) strtol(incomingBuffer, NULL, 16);
-//    Serial.print("Hex: ");
-//    Serial.println(hexNum, HEX);
-//    Serial.println((int) strtol("A90", NULL, 16), HEX);
-//    Serial.println(0xa90, HEX);
     
-    irsend.sendNEC(hexNum, 32); // Maybe sendSony() or sendNEC()
-    // This used to also power the light but doesn't now...
-//    digitalWrite(emitterPin, HIGH);
-//    delay(100);
-//    digitalWrite(emitterPin, LOW);
+    irsend.sendSony(hexNum, 32); // Maybe sendSony() or sendNEC()
   }
 }
